@@ -12,164 +12,7 @@ body {
     scroll-behavior: smooth;
 }
 
-.hero {
-    position: relative;
-    height: 100vh; /* Full height */
-    overflow: hidden;
-    display: flex; /* Use Flexbox for alignment */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-}
-
-.video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    object-fit: cover; /* Cover the container while maintaining aspect ratio */
-    z-index: 1; /* Behind content */
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2; /* Above video */
-    color: white; /* Change as needed for visibility */
-    text-align: center;
-    padding: 20px;
-}
-
-.mute-slider {
-    position: relative;
-    display: inline-block;
-    width: 60px; /* Width of the slider */
-    height: 30px; /* Height of the slider */
-    margin-top: 20px; /* Space above the slider */
-}
-
-.mute-checkbox {
-    opacity: 0; /* Hide the checkbox */
-    position: absolute; /* Position it over the label */
-    cursor: pointer; /* Change cursor on hover */
-}
-
-.mute-label {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgba(144, 238, 144, 0.7); /* Light green background */
-    border-radius: 50px; /* Capsule shape */
-    padding: 5px; /* Padding inside the label */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth transition */
-}
-
-.mute-button {
-    position: relative;
-    width: 24px; /* Width of the button */
-    height: 24px; /* Height of the button */
-    background-color: white; /* Button color */
-    border-radius: 50%; /* Round shape */
-    transition: transform 0.3s ease; /* Smooth slide effect */
-}
-
-.mute-text {
-    color: #333; /* Text color */
-    margin-left: 10px; /* Space between text and button */
-}
-
-.mute-checkbox:checked + .mute-label .mute-button {
-    transform: translateX(30px); /* Slide the button */
-}
-
-.mute-checkbox:checked + .mute-label {
-    background-color: rgba(255, 99, 71, 0.7); /* Red for "Unmute" state */
-}
-
-.mute-checkbox:checked + .mute-label .mute-text {
-    content: "Unmuted"; /* Change text on check */
-}
-
-/* new capsule button */
-
-.capsule-btn {
-    background-color: rgba(144, 238, 144, 0.7); /* Light green background */
-    border: none; /* No border */
-    border-radius: 50px; /* Rounded edges */
-    color: #333; /* Dark text color */
-    padding: 10px 20px; /* Vertical and horizontal padding */
-    font-size: 16px; /* Font size */
-    cursor: pointer; /* Pointer on hover */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
-    z-index: 2; /* Ensure it's above the video */
-    outline: none; /* Remove outline */
-}
-
-.capsule-btn[aria-pressed="true"] {
-    background-color: rgba(144, 238, 144, 0.9); /* Slightly darker green for "Unmute" state */
-    color: #fff; /* White text for better visibility */
-}
-
-.capsule-btn[aria-pressed="false"] {
-    background-color: rgba(255, 99, 71, 0.7); /* Tomato red for "Mute" state */
-    color: #fff; /* White text for better visibility */
-}
-
-.capsule-btn:hover {
-    opacity: 0.9; /* Slightly darker on hover */
-}
-
-/* end */
-
-.video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    object-fit: cover; /* Cover the container while maintaining aspect ratio */
-    z-index: 1; /* Behind content */
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2; /* Above video */
-    color: white; /* Change as needed for visibility */
-    text-align: center;
-    padding: 20px;
-}
-
-.capsule-btn {
-    background-color: rgba(144, 238, 144, 0.7); /* Light green background */
-    border: none; /* No border */
-    border-radius: 50px; /* Rounded edges */
-    color: #333; /* Dark text color */
-    padding: 10px 20px; /* Vertical and horizontal padding */
-    font-size: 16px; /* Font size */
-    cursor: pointer; /* Pointer on hover */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
-    z-index: 2; /* Ensure it's above the video */
-    outline: none; /* Remove outline */
-    position: relative; /* Allow positioning */
-}
-
-.capsule-btn[aria-pressed="true"] {
-    background-color: rgba(144, 238, 144, 0.9); /* Slightly darker green for "Unmute" state */
-    color: #fff; /* White text for better visibility */
-}
-
-.capsule-btn[aria-pressed="false"] {
-    background-color: rgba(255, 99, 71, 0.7); /* Tomato red for "Mute" state */
-    color: #fff; /* White text for better visibility */
-}
-
-.capsule-btn:hover {
-    opacity: 0.9; /* Slightly darker on hover */
-}
-
-
-
-/* Navbar */
+/* Navigation Bar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -208,10 +51,30 @@ body {
 
 /* Hero Section */
 .hero {
+    position: relative;
+    height: 100vh; /* Full height */
+    overflow: hidden;
+    display: flex; /* Use Flexbox for alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     text-align: center;
-    padding: 150px 20px;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/gta-cityscape.jpg') no-repeat center center/cover;
-    color: #ffffff;
+    padding: 20px; /* Padding for smaller screens */
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+    z-index: 1; /* Behind content */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Above video */
+    color: white; /* Change as needed for visibility */
 }
 
 .hero h1 {
@@ -224,7 +87,8 @@ body {
     margin-bottom: 20px;
 }
 
-.btn {
+/* Button Styles */
+.btn, .capsule-btn {
     padding: 12px 24px;
     background: rgba(168, 230, 161, 0.3); /* Light green with transparency */
     color: #fff;
@@ -234,7 +98,7 @@ body {
     transition: background 0.3s, box-shadow 0.3s;
 }
 
-.btn:hover {
+.btn:hover, .capsule-btn:hover {
     background: rgba(168, 230, 161, 0.6); /* Darker light green on hover */
     box-shadow: 0 4px 15px rgba(168, 230, 161, 0.4); /* Green shadow effect */
 }
@@ -245,7 +109,7 @@ section {
     text-align: center;
 }
 
-.about, .community, .join, .contact {
+.about, .community, .join, .contact, .registration {
     background-color: rgba(30, 30, 30, 0.8);
     margin: 20px 0;
     border-radius: 8px;
@@ -280,33 +144,6 @@ form button:hover {
     box-shadow: 0 4px 15px rgba(168, 230, 161, 0.4); /* Green shadow effect */
 }
 
-/* Join Us Section Styling */
-.join h2 {
-    margin-bottom: 20px; /* Space below the heading */
-}
-
-.join p {
-    margin-bottom: 30px; /* Space below the paragraph */
-}
-
-.join .btn {
-    margin-top: 10px; /* Add space above the button */
-}
-
-/* Contact Section Styling */
-.contact h2 {
-    margin-bottom: 10px; /* Space below the heading */
-}
-
-.contact p {
-    margin-bottom: 20px; /* Space below the paragraph */
-}
-
-.contact .btn {
-    margin-top: 20px; /* Space above the button */
-}
-
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero h1 {
@@ -320,5 +157,28 @@ form button:hover {
 
     form input, form textarea, form button {
         width: 90%;
+    }
+
+    .hero-content {
+        padding: 10px; /* Less padding on smaller screens */
+    }
+
+    .btn, .capsule-btn {
+        padding: 10px 20px; /* Adjust button size */
+    }
+
+    .join h2, .about h2, .community h2, .contact h2 {
+        font-size: 24px; /* Adjust section titles */
+    }
+}
+
+/* Large devices */
+@media (min-width: 769px) {
+    .hero h1 {
+        font-size: 48px; /* Adjust for larger screens */
+    }
+    
+    .hero p {
+        font-size: 24px; /* Increase paragraph font size */
     }
 }
