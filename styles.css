@@ -16,179 +16,147 @@ body {
 .navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center; /* Center items vertically */
     padding: 15px 20px;
-    background-color: rgba(34, 34, 34, 0.8);
+    background-color: rgba(34, 34, 34, 0.8); /* Transparent black */
     position: fixed;
     width: 100%;
     z-index: 100;
     transition: background-color 0.3s;
 }
 
-.logo {
+.navbar .logo {
     font-size: 22px;
     font-weight: bold;
-    color: #a8e6a1;
-}
-
-/* Menu Toggle */
-.menu-toggle {
-    display: none; /* Hidden by default */
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.menu-toggle .bar {
-    height: 3px;
-    width: 25px;
-    background-color: #f5f5f5;
-    margin: 4px;
-    transition: all 0.3s ease;
+    color: #a8e6a1; /* Light green for logo */
 }
 
 .nav-links {
     list-style: none;
-    display: flex; /* Show links inline on desktop */
-    flex-direction: row; /* Horizontal layout */
-    align-items: center; /* Center items vertically */
+    display: flex; /* Display links in a row */
 }
 
 .nav-links li {
-    margin-left: 20px; /* Space between links */
+    margin-left: 20px;
 }
 
 .nav-links a {
     color: #f5f5f5;
     text-decoration: none;
     transition: color 0.3s;
+    padding: 8px 12px; /* Padding for a button-like effect */
+    border-radius: 5px; /* Rounded edges */
 }
 
 .nav-links a:hover {
-    color: #a8e6a1; /* Light green on hover */
+    background-color: rgba(168, 230, 161, 0.5); /* Light green on hover */
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none; /* Hide menu toggle by default */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: #a8e6a1; /* Light green */
+    margin: 3px 0; /* Space between bars */
 }
 
 /* Hero Section */
 .hero {
     position: relative;
-    height: 100vh;
+    height: 100vh; /* Full height */
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; /* Use Flexbox for alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     text-align: center;
-    padding: 20px;
+    padding: 150px 20px;
+    color: #ffffff;
 }
 
 .video-background {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+    z-index: 1; /* Behind content */
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
-    color: white;
+    z-index: 2; /* Above video */
+    padding: 20px;
 }
 
 .capsule-btn {
-    background-color: rgba(144, 238, 144, 0.7);
-    border: none;
-    border-radius: 50px;
-    color: #333;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    z-index: 2;
-    outline: none;
+    background-color: rgba(144, 238, 144, 0.7); /* Light green background */
+    border: none; /* No border */
+    border-radius: 50px; /* Rounded edges */
+    color: #333; /* Dark text color */
+    padding: 10px 20px; /* Vertical and horizontal padding */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    z-index: 2; /* Ensure it's above the video */
+    outline: none; /* Remove outline */
 }
 
 .capsule-btn[aria-pressed="true"] {
-    background-color: rgba(144, 238, 144, 0.9);
-    color: #fff;
+    background-color: rgba(144, 238, 144, 0.9); /* Slightly darker green for "Unmute" state */
+    color: #fff; /* White text for better visibility */
 }
 
 .capsule-btn[aria-pressed="false"] {
-    background-color: rgba(255, 99, 71, 0.7);
-    color: #fff;
+    background-color: rgba(255, 99, 71, 0.7); /* Tomato red for "Mute" state */
+    color: #fff; /* White text for better visibility */
 }
 
 .capsule-btn:hover {
-    opacity: 0.9;
+    opacity: 0.9; /* Slightly darker on hover */
 }
 
 /* Section Styling */
 section {
     padding: 80px 20px;
     text-align: center;
-    background-color: rgba(30, 30, 30, 0.8);
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Form Styles */
-form input, form textarea {
-    display: block;
-    width: 85%;
-    margin: 10px auto;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #333;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
-}
-
-form button {
-    padding: 10px 20px;
-    border: 1px solid #a8e6a1;
-    background: rgba(168, 230, 161, 0.3);
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s, box-shadow 0.3s;
-}
-
-form button:hover {
-    background: rgba(168, 230, 161, 0.6);
-    box-shadow: 0 4px 15px rgba(168, 230, 161, 0.4);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Hide links initially */
+    .navbar .nav-links {
+        display: none; /* Hide nav links */
         flex-direction: column; /* Stack links vertically */
+        position: absolute; /* Position them in absolute space */
+        background-color: rgba(34, 34, 34, 0.9); /* Background for dropdown */
+        top: 70px; /* Position below navbar */
+        right: 0;
         width: 100%; /* Full width */
-        background-color: rgba(34, 34, 34, 0.9); /* Darker background */
-        position: absolute; /* Position it below the navbar */
-        top: 60px; /* Adjust based on your navbar height */
-        left: 0;
     }
 
-    .nav-links.active {
-        display: flex; /* Show links when active */
+    .navbar .nav-links.show {
+        display: flex; /* Show links when toggled */
     }
 
     .menu-toggle {
-        display: flex; /* Show the toggle button on mobile */
+        display: flex; /* Show the menu toggle on mobile */
     }
 
-    .nav-links a {
-        padding: 15px; /* Add padding for each link */
-        text-align: center; /* Center text */
-        border-bottom: 1px solid #444; /* Optional: border between links */
-    }
-    
     .hero h1 {
         font-size: 32px;
     }
 
-    .hero p {
-        font-size: 18px;
+    .nav-links li {
+        margin: 10px 0; /* Space for stacked links */
+    }
+
+    form input, form textarea, form button {
+        width: 90%;
     }
 }
