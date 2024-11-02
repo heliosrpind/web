@@ -8,6 +8,7 @@ document.querySelectorAll('.nav-links a').forEach(anchor => {
     });
 });
 
+// Mute toggle functionality for the video
 const video = document.getElementById('background-video');
 const muteButton = document.getElementById('mute-toggle');
 
@@ -20,10 +21,10 @@ muteButton.addEventListener('click', () => {
     muteButton.setAttribute('aria-pressed', isMuted); // Set accessibility attribute
 });
 
-// Mobile menu toggle
-const menuToggle = document.getElementById('menu-toggle');
+// Mobile menu toggle functionality
+const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.querySelector('.nav-links');
 
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active'); // Toggle the active class
+mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('show'); // Toggle the visibility of nav links
 });
